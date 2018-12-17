@@ -1,0 +1,27 @@
+@model Chef
+<!-- Insert Model Here -->
+<div class="row justify-content-center">
+    <div class="col-lg-10 rounded justify-content-center m-4 bg-white">
+        <div class="row justify-content-center m-3 border-bottom">
+            <h1>Add a Chef!</h1>
+        </div>
+        <div class="row justify-content-center m-3 border-bottom">
+            <form asp-action="createChef" asp-controller="Main" method="POST">
+            <div class="form-row justify-content-center m-3">
+                <div class="col-lg-10 mb-3 text-center">
+                    <label asp-for="FirstName"><h5>First Name</h5></label>
+                    <input type="text" class="w-75" asp-for="FirstName">
+                    <p><span asp-validation-for="FirstName" class="text-danger"></span></p>
+                    <label asp-for="LastName"><h5 class="mt-2">Last Name</h5></label>
+                    <input type="text" class="w-75" asp-for="LastName">
+                    <p><span asp-validation-for="LastName" class="text-danger"></span></p>
+                    <label asp-for="Birthday"><h5 class="mt-2">Birthday</h5></label>
+                    <input type="date" class="w-75 mb-3" asp-for="Birthday">
+                    <p><span asp-validation-for="Birthday" class="text-danger"></span></p>
+                    <button type="submit" class="btn btn-success mt-2">Add Chef</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

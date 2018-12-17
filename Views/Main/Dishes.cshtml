@@ -1,0 +1,34 @@
+@model List<Dish>
+<!-- Insert Model Here -->
+<div class="row justify-content-center">
+    <div class="col-lg-10 rounded justify-content-center m-4 bg-white">
+        <div class="row justify-content-center m-3 border-bottom">
+            <h1>Yum, take a look at our tasty dishes!</h1>
+        </div>
+        <div class="row justify-content-center m-3">
+            <table class="table table-striped h-25 scroll">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" style="width: 30%;">Name</th>
+                    <th scope="col" style="width: 30%;">Chef</th>
+                    <th scope="col" style="width: 20%;">Tastiness</th>
+                    <th scope="col" style="width: 20%;">Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var dish in Model)
+                {
+                    <tr>
+                        <td>@dish.Name</td>
+                        <td>@dish.Creator.FirstName @dish.Creator.LastName</td>
+                        <td>@dish.Tastiness</td>
+                        <td>@dish.Calories</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="row justify-content-center m-3 border-bottom">
+            <a href="newDish" class="btn btn-success mb-4">Add a Dish</a>
+        </div>
+    </div>
+</div>
